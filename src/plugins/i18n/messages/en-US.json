@@ -1,0 +1,11 @@
+{
+	"auth": {
+		"emailHasAlreadyBeenTaken": "The email has already been taken",
+		"invalidEmailOrPassword": "Invalid e-mail or password"
+	},
+	"common": {
+		"currentLocale": "English",
+		"dark": "Dark",
+		"light": "Light"
+	}
+}

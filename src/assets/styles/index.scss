@@ -1,0 +1,15 @@
+@import "./fonts.scss";
+@import 'io-library/dist/style.css';
+@import '@mdi/font/css/materialdesignicons.css';
+
+body {
+  margin: 0;
+  font-family: 'PT Root UI', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+  font-weight: 500;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+  
+code {
+  font-family: source-code-pro, 'Courier New', monospace;
+}
