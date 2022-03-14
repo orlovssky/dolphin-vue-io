@@ -3,7 +3,7 @@
     <io-list-item>
       <io-list-item-icon>
         <main-icon
-          name="DolphinTiktokLogo"
+          name="DolphinMainLogo"
           width="32px"
           height="32px"
         />

@@ -8,9 +8,9 @@
 </template>
 
 <script lang="ts">
-import MainSidebar          from '@/components/main/sidebar/MainSidebar.vue';
-import { IoApp, IoView }    from 'io-library';
-import { useStore }         from 'vuex';
+import MainSidebar       from '@/components/main/sidebar/MainSidebar.vue';
+import { IoApp, IoView } from 'io-library';
+import { useStore }      from 'vuex';
 import {
   defineComponent,
   computed

@@ -1,16 +1,22 @@
-import { RouteLocationNormalized } from 'vue-router';
+import { NavigationGuard } from 'vue-router';
 
-const token = localStorage.getItem('anty-remote-api-token');
+interface Middleware {
+  notAuthenticated: NavigationGuard;
+  authenticated: NavigationGuard;
+}
 
-const notAuthenticated = (to: RouteLocationNormalized, from: RouteLocationNormalized, next: Function): void => {
-  if (!token) {
-    return next();
+const token = localStorage.getItem('dolphin-api-token');
+
+const middleware: Middleware = {
+  notAuthenticated: (to, from, next) => {
+    if (!token) return next();
+    return next({ name: 'Main' });
+  },
+
+  authenticated: (to, from, next) => {
+    if (token) return next();
+    return next({ name: 'SignIn' });
   }
-  return next({ name: 'Home' });
 };
-const authenticated = (to: RouteLocationNormalized, from: RouteLocationNormalized, next: Function): void => {
-  if (token) {
-    return next();
-  }
-  return next({name: 'SignIn'});
-};
+
+export default middleware;

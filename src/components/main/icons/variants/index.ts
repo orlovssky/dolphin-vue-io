@@ -1,5 +1,6 @@
-export { default as DolphinTiktokLogo } from './DolphinTiktokLogo.vue';
-export { default as TiktokLogo } from './TiktokLogo.vue';
-export { default as CircleFlagCn } from './CircleFlagCn.vue';
-export { default as CircleFlagGb } from './CircleFlagGb.vue';
-export { default as CircleFlagRu } from './CircleFlagRu.vue';
+export { default as DolphinTiktokLogo } from './main/DolphinTiktokLogo.vue';
+export { default as DolphinMainLogo } from './main/DolphinMainLogo.vue';
+export { default as TiktokLogo } from './icons/TiktokLogo.vue';
+export { default as CircleFlagCn } from './flags/CircleFlagCn.vue';
+export { default as CircleFlagGb } from './flags/CircleFlagGb.vue';
+export { default as CircleFlagRu } from './flags/CircleFlagRu.vue';

@@ -1,15 +1,26 @@
 import {
   createRouter,
   createWebHistory,
-  RouteRecordRaw } from 'vue-router';
+  RouteRecordRaw 
+} from 'vue-router';
 
-import Main from '../views/Home.vue';
+import Main       from '../views/Main.vue';
+import SignIn     from '../views/SignIn.vue';
+
+import middleware from './middleware';
 
 const routes: Array<RouteRecordRaw> = [
   {
     path: '/',
     name: 'Main',
-    component: Main
+    component: Main,
+    beforeEnter: middleware.authenticated,
+  },
+  {
+    path: '/sign-in',
+    name: 'SignIn',
+    component: SignIn,
+    beforeEnter: middleware.notAuthenticated,
   },
 ];
 

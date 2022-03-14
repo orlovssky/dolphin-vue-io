@@ -1,7 +1,9 @@
 {
 	"auth": {
+		"email": "Почта",
 		"emailHasAlreadyBeenTaken": "Почта уже занята",
-		"invalidEmailOrPassword": "Неверная почта или пароль"
+		"invalidEmailOrPassword": "Неверная почта или пароль",
+		"password": "Пароль"
 	},
 	"common": {
 		"currentLocale": "Русский",
