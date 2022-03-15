@@ -29,7 +29,7 @@
 
       <!-- ВОЙТИ -->
       <io-button
-        :disabled="disabled"
+        :loading="loading"
         @click="onSignIn"
       >
         {{ t('auth.signIn') }}
@@ -68,7 +68,7 @@ export default defineComponent({
     const router = useRouter();
     const { t, locale } = useI18n();
 
-    const disabled = ref(false);
+    const loading = ref(false);
     const touched = ref(false);
 
     const isRequired = (value: string) => (value ? true : t('validation.fieldIsRequired'));
@@ -95,7 +95,7 @@ export default defineComponent({
     });
     
     const submit = handleSubmit(({ email, password }) => {
-      disabled.value = true;
+      loading.value = true;
       
       signInUserApi({
         username: email,
@@ -104,12 +104,12 @@ export default defineComponent({
         .then(({ data }) => {
           if (data.data?.access_token) {
             localStorage.setItem('dolphin-api-token', data.data.access_token);
-            disabled.value = false;
+            loading.value = false;
             router.push({ name: 'Main' }); 
           }
         })
         .catch(() => {
-          disabled.value = false;
+          loading.value = false;
         });
     });
 
@@ -120,7 +120,7 @@ export default defineComponent({
 
     return {
       touched,
-      disabled,
+      loading,
       t,
       form,
       errors,

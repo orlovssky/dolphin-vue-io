@@ -4056,10 +4056,10 @@ inherits@2.0.3:
   resolved "https://registry.yarnpkg.com/inherits/-/inherits-2.0.3.tgz#633c2c83e3da42a502f52466022480f4208261de"
   integrity sha1-Yzwsg+PaQqUC9SRmAiSA9CCCYd4=
 
-io-library@^0.0.19:
-  version "0.0.19"
-  resolved "https://registry.yarnpkg.com/io-library/-/io-library-0.0.19.tgz#fd7f129191df2e72ae915569fe6fd8314b1b7c08"
-  integrity sha512-SDK2zA4S3djs/Kawu424NczJ8dnUuLlJBDBjKOeKKbm7Joj2JYQP6PFbEPdzV11w7mw2wOZbnnX9OqxO+lltIA==
+io-library@^0.0.22:
+  version "0.0.22"
+  resolved "https://registry.yarnpkg.com/io-library/-/io-library-0.0.22.tgz#b593cd766759d1481285c04d2bb33633d7fb2238"
+  integrity sha512-8xq09AgbSPHvODMxh6QDjycfVjf+1g1980hnzU4X/WXyOJaHnydBwqX9yxulcpfoQ2UVQpiGuMezbwLFwX4g8Q==
   dependencies:
     vue "^3.2.31"
 
