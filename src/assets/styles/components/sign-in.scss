@@ -5,8 +5,18 @@
   height: 100vh;
 
   &__form {
-    & .io-text-field__wrapper:first-child {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    & .sign-in__item {
       margin-bottom: 12px;
+
+      & span {
+        font-size: 12px;
+        color: var(--io-color-error);
+      }
     }
   }
 }

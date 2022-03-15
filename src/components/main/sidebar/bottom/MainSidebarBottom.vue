@@ -1,7 +1,12 @@
 <template>
   <io-list>
+    <!-- ЯЗЫК -->
     <main-sidebar-bottom-locale />
+    <!-- ЯЗЫК КОНЕЦ -->
+
+    <!-- ТЕМА -->
     <main-sidebar-bottom-theme :profile="profile" />
+    <!-- ТЕМА КОНЕЦ -->
   </io-list>
 </template>
 
@@ -18,7 +23,7 @@ import MainSidebarBottomLocale from './MainSidebarBottomLocale.vue';
 import MainSidebarBottomTheme  from './MainSidebarBottomTheme.vue';
 
 export default defineComponent({
-  name: 'MainSidebar',
+  name: 'MainSidebarBottom',
 
   components: {
     IoList,
@@ -28,7 +33,11 @@ export default defineComponent({
 
   setup () {
     const store = useStore();
-    const profile = computed(() => store.getters['main/profile'] as ProfileModel);
+
+    const profile = computed(() => {
+      return store.getters['main/profile'] as ProfileModel;
+    });
+    
     return {
       profile,
     };

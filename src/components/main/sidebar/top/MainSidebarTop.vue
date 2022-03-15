@@ -1,5 +1,6 @@
 <template>
   <io-list>
+    <!-- ЛОГОТИП -->
     <io-list-item>
       <io-list-item-icon>
         <main-icon
@@ -12,6 +13,7 @@
         Dolphin
       </io-list-item-content>
     </io-list-item>
+    <!-- ЛОГОТИП КОНЕЦ -->
   </io-list>
 </template>
 
@@ -26,7 +28,7 @@ import {
 import { defineComponent } from 'vue';
 
 export default defineComponent({
-  name: 'MainSidebar',
+  name: 'MainSidebarTop',
 
   components: {
     MainIcon,

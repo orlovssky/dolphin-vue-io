@@ -20,14 +20,14 @@ import {
   IoListItemContent,
   IoListItemIcon
 } from 'io-library';
-import { useI18n }  from 'vue-i18n';
+import { useI18n } from 'vue-i18n';
 import { 
   defineComponent, 
   computed
 } from 'vue';
 
 export default defineComponent({
-  name: 'MainSidebarBottomTheme',
+  name: 'MainSidebarBottomLocale',
 
   components: {
     MainIcon,

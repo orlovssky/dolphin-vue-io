@@ -51,7 +51,7 @@ export default defineComponent({
   setup (props: Props) {
     const { t } = useI18n();
     const store = useStore();
-    const profile = toRef(props, 'profile'); // ДЛЯ РЕАКТИВНОЙ ДЕСТРУКТУРИЗАЦИИ
+    const profile = toRef(props, 'profile'); // РЕАКТИВНАЯ ДЕСТРУКТУРИЗАЦИЯ
 
     const iconClassObject = computed(() => ({
       'mdi': true,

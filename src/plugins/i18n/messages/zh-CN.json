@@ -3,11 +3,15 @@
 		"email": "E-mail",
 		"emailHasAlreadyBeenTaken": "The email has already been taken",
 		"invalidEmailOrPassword": "Invalid e-mail or password",
-		"password": "Password"
+		"password": "Password",
+		"signIn": "Sign in"
 	},
 	"common": {
 		"currentLocale": "中国人",
 		"dark": "Dark",
 		"light": "Light"
+	},
+	"validation": {
+		"fieldIsRequired": "This field is required"
 	}
 }

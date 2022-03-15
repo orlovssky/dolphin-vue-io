@@ -1,3 +1,4 @@
+import { getApiToken }     from '@/helpers/common/apiToken';
 import { NavigationGuard } from 'vue-router';
 
 interface Middleware {
@@ -5,16 +6,14 @@ interface Middleware {
   authenticated: NavigationGuard;
 }
 
-const token = localStorage.getItem('dolphin-api-token');
-
 const middleware: Middleware = {
   notAuthenticated: (to, from, next) => {
-    if (!token) return next();
+    if (!getApiToken()) return next();
     return next({ name: 'Main' });
   },
 
   authenticated: (to, from, next) => {
-    if (token) return next();
+    if (getApiToken()) return next();
     return next({ name: 'SignIn' });
   }
 };

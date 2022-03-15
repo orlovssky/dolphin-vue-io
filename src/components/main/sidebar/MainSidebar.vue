@@ -1,8 +1,16 @@
 <template>
   <io-drawer space-between>
+    <!-- ТОП -->
     <main-sidebar-top />
+    <!-- ТОП КОНЕЦ -->
+
+    <!-- СЕРЕДИНА -->
     <main-sidebar-middle v-if="showSidebarMiddle" />
+    <!-- СЕРЕДИНА КОНЕЦ -->
+
+    <!-- НИЗ -->
     <main-sidebar-bottom />
+    <!-- НИЗ КОНЕЦ -->
   </io-drawer>
 </template>
 
@@ -19,10 +27,10 @@ export default defineComponent({
   name: 'MainSidebar',
 
   components: {
+    IoDrawer,
     MainSidebarTop,
     MainSidebarMiddle,
     MainSidebarBottom,
-    IoDrawer,
   },
 
   setup () {

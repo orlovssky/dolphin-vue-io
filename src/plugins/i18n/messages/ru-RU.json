@@ -3,11 +3,15 @@
 		"email": "Почта",
 		"emailHasAlreadyBeenTaken": "Почта уже занята",
 		"invalidEmailOrPassword": "Неверная почта или пароль",
-		"password": "Пароль"
+		"password": "Пароль",
+		"signIn": "Войти"
 	},
 	"common": {
 		"currentLocale": "Русский",
 		"dark": "Темная",
 		"light": "Светлая"
+	},
+	"validation": {
+		"fieldIsRequired": "Обязательное поле"
 	}
 }
