@@ -4,7 +4,7 @@ import {
   RouteRecordRaw 
 } from 'vue-router';
 
-import Main       from '../views/Main.vue';
+import Main       from '../views/MainView.vue';
 import SignIn     from '../views/SignIn.vue';
 
 import middleware from './middleware';

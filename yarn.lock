@@ -4056,10 +4056,10 @@ inherits@2.0.3:
   resolved "https://registry.yarnpkg.com/inherits/-/inherits-2.0.3.tgz#633c2c83e3da42a502f52466022480f4208261de"
   integrity sha1-Yzwsg+PaQqUC9SRmAiSA9CCCYd4=
 
-io-library@^0.0.22:
-  version "0.0.22"
-  resolved "https://registry.yarnpkg.com/io-library/-/io-library-0.0.22.tgz#b593cd766759d1481285c04d2bb33633d7fb2238"
-  integrity sha512-8xq09AgbSPHvODMxh6QDjycfVjf+1g1980hnzU4X/WXyOJaHnydBwqX9yxulcpfoQ2UVQpiGuMezbwLFwX4g8Q==
+io-library@^0.0.23:
+  version "0.0.23"
+  resolved "https://registry.yarnpkg.com/io-library/-/io-library-0.0.23.tgz#c35ec5f62d2579bb5d462aa09120a7f2fab408dd"
+  integrity sha512-l5tsT1tqpdoMlfKD1gGqurNbn1C9BqyJgA+EoO+44N+I1HfdDUTlGQLdx80M7SkIygU6CwMoSgOf2o5CLHsIHQ==
   dependencies:
     vue "^3.2.31"
 
@@ -6622,7 +6622,7 @@ vue-hot-reload-api@^2.3.0:
   resolved "https://registry.yarnpkg.com/vue-hot-reload-api/-/vue-hot-reload-api-2.3.4.tgz#532955cc1eb208a3d990b3a9f9a70574657e08f2"
   integrity sha512-BXq3jwIagosjgNVae6tkHzzIk6a8MHFtzAdwhnV5VlvPTFxDCvIttgSiHWjdGoTJvXtmRu5HacExfdarRcFhog==
 
-vue-i18n@^9.2.0-beta.30:
+vue-i18n@^9.2.0-beta.32:
   version "9.2.0-beta.32"
   resolved "https://registry.yarnpkg.com/vue-i18n/-/vue-i18n-9.2.0-beta.32.tgz#6198e696857ecb4018b3e3cccc5741f6c11070ea"
   integrity sha512-heUy1Aa/4DT2+ukoZkXMtDeU0o4pB5K6XxCypsmpoQ1QURAx1zyHqHB4mdjnLj3DDjllT921cV9cuKEWflQYGQ==

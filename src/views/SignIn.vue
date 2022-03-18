@@ -1,3 +1,58 @@
+<script setup lang="ts">
+import { isRequired }            from '@/helpers/validation';
+import { LoginFormModel }        from '@/models/auth';
+import { signInUserApi }         from '@/services/auth';
+import { IoTextField, IoButton } from 'io-library';
+import { useForm }               from 'vee-validate';
+import { useI18n }               from 'vue-i18n';
+import { useRouter }             from 'vue-router';
+import { ref, watch, computed }  from 'vue';
+
+const router = useRouter();
+const { t } = useI18n();
+const loading = ref(false);
+const touched = ref(false);
+
+const { values: form, errors, handleSubmit } = useForm<LoginFormModel>({
+  validationSchema: { email: isRequired, password: isRequired },
+});
+
+watch(form, () => {
+  if (touched.value) touched.value = false;
+});
+
+const showError = computed(() => {
+  return {
+    email: touched.value && !!errors.value.email,
+    password: touched.value && !!errors.value.password
+  };
+});
+    
+const submit = handleSubmit(({ email, password }) => {
+  loading.value = true;
+      
+  signInUserApi({
+    username: email,
+    password,
+  })
+    .then(({ data }) => {
+      if (data.data?.access_token) {
+        localStorage.setItem('dolphin-api-token', data.data.access_token);
+        loading.value = false;
+        router.push({ name: 'Main' }); 
+      }
+    })
+    .catch(() => {
+      loading.value = false;
+    });
+});
+
+const onSignIn = async () => {
+  await submit();
+  touched.value = true;
+};
+</script>
+
 <template>
   <div class="sign-in">
     <div class="sign-in__form">
@@ -7,9 +62,9 @@
           v-model="form.email"
           name="email"
           :label="t('auth.email')"
-          :error="touched && !!errors.email"
+          :error="showError.email"
         />
-        <span v-if="touched && !!errors.email">{{ errors.email }}</span>
+        <span v-if="showError.email">{{ t(`${errors.email}`) }}</span>
       </div>
       <!-- ПОЧТА КОНЕЦ -->
 
@@ -21,9 +76,9 @@
           name="password"
           :label="t('auth.password')"
           type="password"
-          :error="touched && !!errors.password"
+          :error="showError.password"
         />
-        <span v-if="touched && !!errors.password">{{ errors.password }}</span>
+        <span v-if="showError.password">{{ t(`${errors.password}`) }}</span>
       </div>
       <!-- ПАРОЛЬ КОНЕЦ -->
 
@@ -38,98 +93,6 @@
     </div>
   </div>
 </template>
-
-<script lang="ts">
-import { signInUserApi }         from '@/services/auth';
-import { IoTextField, IoButton } from 'io-library';
-import { useForm }               from 'vee-validate';
-import { useI18n }               from 'vue-i18n';
-import { useRouter }             from 'vue-router';
-import { 
-  defineComponent,
-  ref,
-  watch,
-} from 'vue';
-
-interface LoginForm {
-  email: string;
-  password: string;
-}
-
-export default defineComponent({
-  name: 'SignIn',
-
-  components: {
-    IoTextField,
-    IoButton,
-  },
-
-  setup () {
-    const router = useRouter();
-    const { t, locale } = useI18n();
-
-    const loading = ref(false);
-    const touched = ref(false);
-
-    const isRequired = (value: string) => (value ? true : t('validation.fieldIsRequired'));
-
-    const { values: form, errors, handleSubmit, validate } = useForm<LoginForm>({
-      validationSchema: {
-        email: isRequired,
-        password: isRequired,
-      },
-      initialValues: {
-        email: '',
-        password: '',
-      },
-    });
-
-    watch(form, () => {
-      if (touched.value) {
-        touched.value = false;
-      }
-    });
-    
-    watch(locale, () => {
-      validate();
-    });
-    
-    const submit = handleSubmit(({ email, password }) => {
-      loading.value = true;
-      
-      signInUserApi({
-        username: email,
-        password,
-      })
-        .then(({ data }) => {
-          if (data.data?.access_token) {
-            localStorage.setItem('dolphin-api-token', data.data.access_token);
-            loading.value = false;
-            router.push({ name: 'Main' }); 
-          }
-        })
-        .catch(() => {
-          loading.value = false;
-        });
-    });
-
-    const onSignIn = async () => {
-      await submit();
-      touched.value = true;
-    };
-
-    return {
-      touched,
-      loading,
-      t,
-      form,
-      errors,
-      onSignIn,
-    };
-
-  }
-});
-</script>
 
 <style lang="scss">
 @import '@/assets/styles/components/sign-in.scss';

@@ -1,4 +1,4 @@
-import { getApiToken } from '@/helpers/common/apiToken';
+import { getApiToken } from '@/helpers/apiToken';
 import axios           from 'axios';
 
 const api = axios.create({

@@ -1,6 +1,22 @@
+<script setup lang="ts">
+import {
+  IoList,
+  IoListItem,
+  IoListItemContent,
+  IoListItemIcon
+} from 'io-library';
+import { useRouter } from 'vue-router';
+
+const router = useRouter();
+const signOut = () => {
+  localStorage.removeItem('dolphin-api-token');
+  router.push({ name: 'SignIn' }); 
+};
+</script>
+
 <template>
   <io-list>
-    <io-list-item @click="some = !some">
+    <io-list-item>
       <io-list-item-icon>
         <span
           class="mdi mdi-home"
@@ -25,40 +41,3 @@
     </io-list-item>
   </io-list>
 </template>
-
-<script lang="ts">
-import {
-  IoList,
-  IoListItem,
-  IoListItemContent,
-  IoListItemIcon
-} from 'io-library';
-import { useRouter }            from 'vue-router';
-import { defineComponent, ref } from 'vue';
-
-export default defineComponent({
-  name: 'MainSidebarMiddle',
-
-  components: {
-    IoList,
-    IoListItem,
-    IoListItemContent,
-    IoListItemIcon
-  },
-
-  setup () {
-    const router = useRouter();
-
-    const some = ref(false);
-    const signOut = () => {
-      localStorage.removeItem('dolphin-api-token');
-      router.push({ name: 'SignIn' }); 
-    };
-    
-    return {
-      signOut,
-      some,
-    };
-  }
-});
-</script>
