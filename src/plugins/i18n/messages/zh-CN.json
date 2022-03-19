@@ -2,14 +2,19 @@
 	"auth": {
 		"email": "E-mail",
 		"emailHasAlreadyBeenTaken": "The email has already been taken",
+		"home": "Home",
 		"invalidEmailOrPassword": "Invalid e-mail or password",
 		"password": "Password",
-		"signIn": "Sign in"
+		"signIn": "Sign in",
+		"signOut": "Sign out"
 	},
 	"common": {
 		"currentLocale": "中国人",
 		"dark": "Dark",
-		"light": "Light"
+		"dolphin": "Dolphin",
+		"failure": "Failure",
+		"light": "Light",
+		"success": "Success"
 	},
 	"validation": {
 		"fieldIsRequired": "This field is required"

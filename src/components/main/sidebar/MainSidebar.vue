@@ -32,3 +32,7 @@ const showSidebarMiddle = computed(() => {
     <!-- НИЗ КОНЕЦ -->
   </io-drawer>
 </template>
+
+<style lang="scss">
+@import '@/assets/styles/components/sidebar';
+</style>

@@ -42,15 +42,14 @@ const submit = handleSubmit(({ email, password }) => {
   })
     .then(({ data }) => {
       if (data.data?.access_token) {
-        localStorage.setItem('dolphin-api-token', data.data.access_token);
         loading.value = false;
-        router.push({ name: 'Main' }); 
-
+        localStorage.setItem('dolphin-api-token', data.data.access_token); 
         store.dispatch('main/setSnackbar', {
           show: true,
           color: 'success',
-          message: 'Success'
+          message: t('common.success')
         });
+        router.push({ name: 'Main' });
       }
     })
     .catch(() => {
@@ -58,7 +57,7 @@ const submit = handleSubmit(({ email, password }) => {
       store.dispatch('main/setSnackbar', {
         show: true,
         color: 'error',
-        message: 'Error'
+        message: t('common.failure')
       });
     });
 });

@@ -5,9 +5,12 @@ import {
   IoListItemContent,
   IoListItemIcon
 } from 'io-library';
+import { useI18n }   from 'vue-i18n';
 import { useRouter } from 'vue-router';
 
+const { t } = useI18n();
 const router = useRouter();
+
 const signOut = () => {
   localStorage.removeItem('dolphin-api-token');
   router.push({ name: 'SignIn' }); 
@@ -18,25 +21,19 @@ const signOut = () => {
   <io-list>
     <io-list-item>
       <io-list-item-icon>
-        <span
-          class="mdi mdi-home"
-          style="font-size: 24px;"
-        />
+        <span class="mdi mdi-home sidebar__mdi-icon" />
       </io-list-item-icon>
       <io-list-item-content>
-        Home
+        {{ t('auth.home') }}
       </io-list-item-content>
     </io-list-item>
 
     <io-list-item @click="signOut">
       <io-list-item-icon>
-        <span
-          class="mdi mdi-arrow-left-bold-box"
-          style="font-size: 24px;"
-        />
+        <span class="mdi mdi-arrow-left-bold-box sidebar__mdi-icon" />
       </io-list-item-icon>
       <io-list-item-content>
-        Log out
+        {{ t('auth.signOut') }}
       </io-list-item-content>
     </io-list-item>
   </io-list>

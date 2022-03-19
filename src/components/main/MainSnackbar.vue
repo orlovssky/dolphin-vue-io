@@ -4,7 +4,9 @@ import { useStore }   from 'vuex';
 import { computed }   from 'vue';
 
 const store = useStore();
+
 const snackbar = computed(() => store.getters['main/snackbar']);
+
 const handleClose = () => {
   store.dispatch('main/clearSnackbar');
 };
@@ -21,6 +23,6 @@ const handleClose = () => {
   </io-snackbar>
 </template>
 
-<style lang="scss">
+<style lang="scss" scoped>
 @import '@/assets/styles/components/snackbar.scss';
 </style>

@@ -2,14 +2,19 @@
 	"auth": {
 		"email": "Почта",
 		"emailHasAlreadyBeenTaken": "Почта уже занята",
+		"home": "Домой",
 		"invalidEmailOrPassword": "Неверная почта или пароль",
 		"password": "Пароль",
-		"signIn": "Войти"
+		"signIn": "Войти",
+		"signOut": "Выйти"
 	},
 	"common": {
 		"currentLocale": "Русский",
 		"dark": "Темная",
-		"light": "Светлая"
+		"dolphin": "Дельфин",
+		"failure": "Неуспешно",
+		"light": "Светлая",
+		"success": "Успешно"
 	},
 	"validation": {
 		"fieldIsRequired": "Обязательное поле"

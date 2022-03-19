@@ -6,6 +6,9 @@ import {
   IoListItemContent,
   IoListItemIcon
 } from 'io-library';
+import { useI18n } from 'vue-i18n';
+
+const { t } = useI18n();
 </script>
 
 <template>
@@ -20,7 +23,7 @@ import {
         />
       </io-list-item-icon>
       <io-list-item-content>
-        Dolphin
+        {{ t('common.dolphin') }}
       </io-list-item-content>
     </io-list-item>
     <!-- ЛОГОТИП КОНЕЦ -->
