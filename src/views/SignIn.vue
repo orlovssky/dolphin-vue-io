@@ -6,15 +6,20 @@ import { IoTextField, IoButton } from 'io-library';
 import { useForm }               from 'vee-validate';
 import { useI18n }               from 'vue-i18n';
 import { useRouter }             from 'vue-router';
+import { useStore }              from 'vuex';
 import { ref, watch, computed }  from 'vue';
 
+const store = useStore();
 const router = useRouter();
 const { t } = useI18n();
 const loading = ref(false);
 const touched = ref(false);
 
 const { values: form, errors, handleSubmit } = useForm<LoginFormModel>({
-  validationSchema: { email: isRequired, password: isRequired },
+  validationSchema: {
+    email: isRequired,
+    password: isRequired
+  },
 });
 
 watch(form, () => {
@@ -40,10 +45,21 @@ const submit = handleSubmit(({ email, password }) => {
         localStorage.setItem('dolphin-api-token', data.data.access_token);
         loading.value = false;
         router.push({ name: 'Main' }); 
+
+        store.dispatch('main/setSnackbar', {
+          show: true,
+          color: 'success',
+          message: 'Success'
+        });
       }
     })
     .catch(() => {
       loading.value = false;
+      store.dispatch('main/setSnackbar', {
+        show: true,
+        color: 'error',
+        message: 'Error'
+      });
     });
 });
 
