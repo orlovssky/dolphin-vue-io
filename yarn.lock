@@ -1289,10 +1289,10 @@ inherits@2:
   resolved "https://registry.yarnpkg.com/inherits/-/inherits-2.0.4.tgz#0fa2c64f932917c3433a0ded55363aae37416b7c"
   integrity sha512-k/vGaX4/Yla3WzyMCvTQOXYeIHvqOKtnqBduzTHpzpQZzAskKMhZ2K+EnBiSM9zGSoIFeMpXKxa4dYeZIQqewQ==
 
-io-library@^0.0.33:
-  version "0.0.33"
-  resolved "https://registry.yarnpkg.com/io-library/-/io-library-0.0.33.tgz#13a9aebe952f3269862159fe0d4a1e972e8738dc"
-  integrity sha512-oAxtpesCVoMU2yMMiHPfirvYA+aBNzuAWr5hWnsCdErWqwyQiW9L1edaIP59yYFPtuEbuAohqX+ulopS/yNDGg==
+io-library@^0.0.35:
+  version "0.0.35"
+  resolved "https://registry.yarnpkg.com/io-library/-/io-library-0.0.35.tgz#4959730b6e77bc7ed56255604a7fb18aca0ee1af"
+  integrity sha512-hPzKSnpOf58B4F3fbI0hTt7vrO6VOptbvNUjWXqRFPpRxALHrvdD0b9OqVl2Ydko5bGgH4/Ubeedkx/Ql4tYAQ==
 
 is-binary-path@~2.1.0:
   version "2.1.0"
