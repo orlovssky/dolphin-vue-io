@@ -1289,12 +1289,10 @@ inherits@2:
   resolved "https://registry.yarnpkg.com/inherits/-/inherits-2.0.4.tgz#0fa2c64f932917c3433a0ded55363aae37416b7c"
   integrity sha512-k/vGaX4/Yla3WzyMCvTQOXYeIHvqOKtnqBduzTHpzpQZzAskKMhZ2K+EnBiSM9zGSoIFeMpXKxa4dYeZIQqewQ==
 
-io-library@^0.0.26:
-  version "0.0.26"
-  resolved "https://registry.yarnpkg.com/io-library/-/io-library-0.0.26.tgz#e29e441fd14017d1315cc99e4d29bb8a060cc6f5"
-  integrity sha512-6zKcz2b9IfHG/TFWTX0QI87sgiTKPM8Z/xsDGWJ5BBgrGbVucIBTB5gNK/oPdtPZKr4pM/5gLOaWeg+BhAQHSw==
-  dependencies:
-    vue "^3.2.31"
+io-library@^0.0.33:
+  version "0.0.33"
+  resolved "https://registry.yarnpkg.com/io-library/-/io-library-0.0.33.tgz#13a9aebe952f3269862159fe0d4a1e972e8738dc"
+  integrity sha512-oAxtpesCVoMU2yMMiHPfirvYA+aBNzuAWr5hWnsCdErWqwyQiW9L1edaIP59yYFPtuEbuAohqX+ulopS/yNDGg==
 
 is-binary-path@~2.1.0:
   version "2.1.0"
